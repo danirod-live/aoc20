@@ -1,4 +1,13 @@
 defmodule AOC do
+
+  def cartessian(l) do
+    l |> Enum.flat_map(fn i -> l |> Enum.map(fn j -> {i, j} end) end)
+  end
+
+  def cartessian3(l) do
+    l |> Stream.flat_map(fn i -> l |> Stream.flat_map(fn j -> l |> Stream.map(fn k -> {i, j, k} end) end) end)
+  end
+
   def readline(path), do: File.read(path) |> fmap(&String.split/1)
 
   def readmap(path),
