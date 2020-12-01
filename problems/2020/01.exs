@@ -26,8 +26,9 @@ fake_input = [
   1456
 ]
 
-{:ok, input} = AOC.readline("problems/2020/01.input")
-               |> AOC.fmap(fn f -> Enum.map(f, &String.to_integer/1) end)
+{:ok, input} =
+  AOC.readline("problems/2020/01.input")
+  |> AOC.fmap(fn f -> Enum.map(f, &String.to_integer/1) end)
 
-AOC.runner &Aoc2020.Problem01.find2/1, [fake_input, input]
-AOC.runner &Aoc2020.Problem01.find3/1, [fake_input, input]
+AOC.runner(&Aoc2020.Problem01.find2/1, [fake_input, input])
+AOC.runner(&Aoc2020.Problem01.find3/1, [fake_input, input])
