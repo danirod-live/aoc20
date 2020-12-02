@@ -10,7 +10,11 @@ defmodule AOC do
     end)
   end
 
-  def readline(path), do: File.read(path) |> fmap(&String.split/1)
+  def readline(path),
+    do:
+      File.read(path)
+      |> fmap(&String.split(&1, "\n"))
+      |> fmap(&Enum.filter(&1, fn line -> line != "" end))
 
   def readmap(path),
     do:
