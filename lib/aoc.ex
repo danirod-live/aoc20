@@ -10,6 +10,14 @@ defmodule AOC do
     end)
   end
 
+  def combine(l) do
+    0..(length(l) - 1)
+    |> Enum.flat_map(fn i ->
+      i..(length(l) - 1)
+      |> Enum.map(fn j -> {Enum.at(l, i), Enum.at(l, j)} end)
+    end)
+  end
+
   def readline(path),
     do:
       File.read(path)
