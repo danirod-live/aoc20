@@ -66,5 +66,5 @@ end
   AOC.readline("problems/2020/10.input")
   |> AOC.fmap(fn f -> Enum.map(f, &String.to_integer/1) end)
 
-# AOC.runner(&Aoc2020.Problem10.run1/1, [sample1, sample2, input])
-AOC.runner(&Aoc2020.Problem10.run2/1, [sample1, sample2])
+AOC.runner(&Aoc2020.Problem10.run1/1, [sample1, sample2, input])
+# AOC.runner(&Aoc2020.Problem10.run2/1, [sample1, sample2])
