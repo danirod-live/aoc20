@@ -1,4 +1,15 @@
 defmodule AOC do
+  def combinatory([x]), do: [[x], []]
+
+  def combinatory([x | xs]) do
+    comb = combinatory(xs)
+    comb ++ Enum.map(comb, fn c -> [x | c] end)
+  end
+
+  def manhattan({x1, y1}, {x2, y2}), do: abs(x2 - x1) + abs(y2 - y1)
+
+  def manhattan({x, y}), do: manhattan({0, 0}, {x, y})
+
   def cartessian(l) do
     l |> Enum.flat_map(fn i -> l |> Enum.map(fn j -> {i, j} end) end)
   end

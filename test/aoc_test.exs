@@ -2,6 +2,15 @@ defmodule AOCTest do
   use ExUnit.Case
   doctest AOC
 
+  test "combinatory" do
+    combs = AOC.combinatory([2, 4, 5])
+    assert length(combs) == 8
+  end
+
+  test "manhattan" do
+    assert AOC.manhattan({17, 8}) == 25
+  end
+
   test "cartessian" do
     assert AOC.cartessian([1, 2, 3, 4]) ==
              [
